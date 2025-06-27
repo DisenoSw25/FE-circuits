@@ -23,6 +23,13 @@ export class CircuitService {
     return this.http.post("http://localhost:8080/circuits/generateCode", body, {headers: header})
   }
 
+  getUserCircuits(token?: string): Observable<any> {
+    let header = token ? {
+      "token_generacion" : token
+    } : undefined
+    return this.http.get("http://localhost:8080/circuits/getCircuitList", { headers: header });
+  }
+
   retrieveCircuit(id: string): Observable<any> {
     return this.http.get(`http://localhost:8080/circuits/retrieveCircuit/${id}`);
   }

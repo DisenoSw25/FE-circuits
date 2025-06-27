@@ -24,7 +24,8 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PaymentsComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

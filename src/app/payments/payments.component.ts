@@ -12,7 +12,8 @@ export class PaymentsComponent {
 
   stripe = Stripe("pk_test_51R3da7RrzVD5RoMv0ErZWPNX92YlXjguv7guuuN6wCHtUkfM1Ne0aw6DQ8YyJ6uVXXJyuFPwqMupESTjyliRlZuP00GobyBPms")
 
-  transactionId? : string
+  amount: number = 12;
+  transactionId: string = "";
 
   constructor(private service: PaymentsService) { }
 
@@ -71,23 +72,26 @@ export class PaymentsComponent {
       } else {
         if (response.paymentIntent.status === 'succeeded') {
           alert("Pago exitoso");
-          /*self.paymentsService.confirm().subscribe({
+
+          self.service.addCredits(self.amount).subscribe({
+            next: (response: any) => {
+              alert(response); // Muestra "Créditos actualizados."
+            },
+            error: (response: any) => {
+              alert("Error al actualizar créditos");
+            }
+          });
+
+          self.service.confirm(self.amount, self.transactionId).subscribe({
             next: (response: any) => {
               alert(response)
             },
             error: (response: any) => {
               alert(response)
             }
-          })*/
+          })
         }
       }
     });
   }
-  // confirm(): Observable<any> {
-  //   return this.client.get<any>(httpUrl + "payments/confirm", {
-  //     withCredentials: true,
-  //     observe: "response"
-  //   })
-  // }
-
 }
