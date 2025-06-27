@@ -30,6 +30,24 @@ form {
   box-sizing: border-box;
 }
 
+/* Enlaces de registro */
+.register-link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.register-link a {
+  color: #079f58;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
 /* Labels */
 label {
   display: block;

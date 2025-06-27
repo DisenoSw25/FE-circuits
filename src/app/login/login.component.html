@@ -4,7 +4,7 @@
 <br>
 <button (click)="login()">Login</button> -->
 
-
+<div>
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <h2>Iniciar sesión</h2>  <label>
     Email:
@@ -16,7 +16,7 @@
 
   <label>
     Contraseña:
-    <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+    <input type="password" formControlName="password" placeholder="Mínimo 7 caracteres" />
   </label>
   <div *ngIf="passwordErrors" class="error-message">
     {{ passwordErrors }}
@@ -24,6 +24,10 @@
   <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
 </form>
 
+  <p class="register-link">
+    ¿No tienes cuenta? <a routerLink="/register">Regístrate aquí</a>
+  </p>
+  </div>
 <!-- <p><a routerLink="/changepassword">He olvidado la contraseña</a></p> -->
 
 <p *ngIf="errorMessage" class="error-message-general">{{ errorMessage }}</p>
