@@ -57,7 +57,7 @@ export class LoginComponent {
           this.router.navigate(['/calculator']);
         },
         error: () => {
-          this.errorMessage = 'Email o contraseña incorrectos.';
+          this.errorMessage = 'Email o contraseña incorrectos. Asegurese que ha validado su email';
         }
       });
     } else {

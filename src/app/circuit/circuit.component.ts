@@ -15,7 +15,7 @@ export class CircuitComponent {
   matrix? : Matrix
   generatedCode? : string;
   circuitId: string = '';
-circuitList: any;
+  circuitList: any;
 
   constructor(private service : CircuitService, private manager : ManagerService) {
     this.inputQubits = 3
