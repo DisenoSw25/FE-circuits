@@ -1,0 +1,127 @@
+strong {
+    color: #000000;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 20px 0 0;
+}
+
+.qubits-grid {
+  display: grid;
+  grid-template-columns: 2fr 0.5fr; /* Primera columna más ancha, segunda más estrecha */
+  gap: 10px 5px;                 /* Espacio entre filas y columnas */
+  max-width: 350px;
+  margin: 40px auto 0 auto;       /* Centrado horizontal */
+  align-items: center;            /* Centra verticalmente los elementos en cada fila */
+  background-color: #81c0eb; /* Fondo gris claro */
+  padding: 20px;                  /* Espacio interno */
+  border-radius: 10px;           /* Bordes redondeados */
+}
+
+.qubits-grid strong {
+  justify-self: end;              /* Alinea el texto a la derecha de la celda izquierda */
+  font-weight: bold;
+}
+
+.qubits-grid input {
+  justify-self: start;            /* Alinea el input a la izquierda de la celda derecha */
+  width: 40px;
+  height: 30px;
+}
+
+.qubits-grid button {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #a9f196; /* Color de fondo verde */
+}
+.qubits-grid button:hover {
+  color: #ffffff; /* Cambia el color del texto al pasar el mouse */
+  background-color: #196d02; /* Color de fondo verde */
+}
+
+.retrieve-circuit {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Label, input, button */
+  gap: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+  align-items: center;
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.retrieve-circuit strong {
+  justify-self: end;
+  font-weight: bold;
+}
+
+.retrieve-circuit input {
+  justify-self: center;
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.retrieve-circuit button {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #87ceeb;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.retrieve-circuit button:hover {
+  color: #ffffff;
+  background-color: #4682b4;
+}
+
+.retrieve-circuit button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.retrieve-circuit button:disabled:hover {
+  background-color: #ccc;
+  color: #666;
+}
+
+table {
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+#titulo {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.celdas-top {
+    border: 2px solid #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.clickable {
+  color:#3700ff;
+  cursor: pointer;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}

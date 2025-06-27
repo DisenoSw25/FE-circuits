@@ -1,0 +1,29 @@
+<!-- <input type="text" [(ngModel)]="name" placeholder="Username">
+<br>
+<input type="password" [(ngModel)]="pwd" placeholder="Password">
+<br>
+<button (click)="login()">Login</button> -->
+
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>Iniciar sesión</h2>  <label>
+    Email:
+    <input formControlName="email" type="email" placeholder="ejemplo@correo.com" />
+  </label>
+  <div *ngIf="emailErrors" class="error-message">
+    {{ emailErrors }}
+  </div>
+
+  <label>
+    Contraseña:
+    <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+  </label>
+  <div *ngIf="passwordErrors" class="error-message">
+    {{ passwordErrors }}
+  </div>
+  <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+</form>
+
+<!-- <p><a routerLink="/changepassword">He olvidado la contraseña</a></p> -->
+
+<p *ngIf="errorMessage" class="error-message-general">{{ errorMessage }}</p>
