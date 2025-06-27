@@ -35,7 +35,7 @@ export class RegisterComponent {
       return null; // Let required validator handle empty values
     }
 
-    const hasMinLength = value.length >= 6;
+    const hasMinLength = value.length >= 7;
     const hasUppercase = /[A-Z]/.test(value);
     const hasLowercase = /[a-z]/.test(value);
     const hasNumber = /\d/.test(value);
