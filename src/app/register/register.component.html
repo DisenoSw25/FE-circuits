@@ -1,0 +1,47 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h2>Registro</h2>
+  
+  <label>
+    Nombre:
+    <input formControlName="name" type="text" placeholder="Tu nombre" />
+  </label>
+  <div *ngIf="nameErrors" class="error-message">
+    {{ nameErrors }}
+  </div>
+
+  <label>
+    Apellido:
+    <input formControlName="surname" type="text" placeholder="Tu apellido" />
+  </label>
+  <div *ngIf="surnameErrors" class="error-message">
+    {{ surnameErrors }}
+  </div>
+
+  <label>
+    Email:
+    <input formControlName="email" type="email" placeholder="ejemplo@correo.com" />
+  </label>
+  <div *ngIf="emailErrors" class="error-message">
+    {{ emailErrors }}
+  </div>
+
+  <label>
+    Contraseña:
+    <input type="password" formControlName="password" placeholder="Mínimo 6 caracteres" />
+  </label>
+  <div *ngIf="passwordErrors" class="error-message">
+    {{ passwordErrors }}
+  </div>
+
+  <label>
+    Confirmar contraseña:
+    <input type="password" formControlName="confirmPassword" placeholder="Repite tu contraseña" />
+  </label>
+  <div *ngIf="confirmPasswordErrors" class="error-message">
+    {{ confirmPasswordErrors }}
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+</form>
+
+<p *ngIf="errorMessage" class="error-message-general">{{ errorMessage }}</p>

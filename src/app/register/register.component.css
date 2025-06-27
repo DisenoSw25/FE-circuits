@@ -1,0 +1,230 @@
+/* Contenedor principal */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+/* Título */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #079f58;
+  font-size: 30px;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulario */
+form {
+  background: rgb(129, 240, 188);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 20px;
+  color: #555;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  background-color: #fafafa;
+}
+
+input:focus {
+  outline: none;
+  border-color: #079f58;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(7, 159, 88, 0.1);
+}
+
+input:hover {
+  border-color: #d1d9e6;
+}
+
+/* Estilos para placeholders */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+input:focus::placeholder {
+  opacity: 0.5;
+}
+
+/* Mensajes de error */
+div[style*="color: red"] {
+  color: #e74c3c !important;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Mensajes de validación específicos */
+.error-message {
+  color: #e74c3c;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.error-message:before {
+  content: "⚠";
+  margin-right: 5px;
+}
+
+/* Botón */
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: #079f58;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #068048;
+  box-shadow: 0 8px 25px rgba(7, 159, 88, 0.3);
+}
+
+button[type="submit"]:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button[type="submit"]:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mensaje de error general */
+.error-message-general {
+  background-color: #fdeaea;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Enlaces comentados - por si se descomenta */
+p a {
+  color: #079f58;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+p a:hover {
+  color: #068048;
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  form {
+    padding: 30px 20px;
+    margin: 0 10px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  input {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  button[type="submit"] {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+form {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Estados de validación visual */
+input.ng-invalid.ng-touched {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+  animation: shake 0.3s ease-in-out;
+}
+
+input.ng-valid.ng-touched {
+  border-color: #27ae60;
+  background-color: #f2fdf2;
+}
+
+/* Animación de error */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  75% { transform: translateX(3px); }
+}
+
+/* Efectos adicionales */
+input:focus {
+  animation: focusIn 0.3s ease-in-out;
+}
+
+@keyframes focusIn {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
